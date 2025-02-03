@@ -1,7 +1,7 @@
-from flask import Flask, request, jsonify
+from quart import Quart, jsonify
 from youtube_transcript_api import YouTubeTranscriptApi
 
-app = Flask(__name__)
+app = Quart(__name__)
 PORT = 3000  # Change as needed
 
 @app.route('/transcript/<string:videoId>', methods=['GET'])
