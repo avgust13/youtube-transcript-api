@@ -1,1 +1,1 @@
-web: hypercorn src.main:app --bind '0.0.0.0:8585' --workers 4
+web: hypercorn main:app --bind '0.0.0.0:8181' --workers 4
