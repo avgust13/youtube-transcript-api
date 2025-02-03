@@ -4,15 +4,15 @@ from youtube_transcript_api import YouTubeTranscriptApi
 app = Flask(__name__)
 PORT = 3000  # Change as needed
 
-@app.route('/transcript', methods=['GET'])
-def get_transcript():
-    video_id_or_url = request.args.get('video')
+@app.route('/transcript/<string:videoId>', methods=['GET'])
+def get_transcript(videoId):
+    video_id = videoId
     
-    if not video_id_or_url:
+    if not video_id:
         return jsonify({"error": "Missing 'video' query parameter (videoId or URL)."}), 400
     
     try:
-        transcript = YouTubeTranscriptApi.get_transcript(video_id_or_url)
+        transcript = YouTubeTranscriptApi.get_transcript(video_id)
         return jsonify({"transcript": transcript})
     except Exception as error:
         print(f"Error fetching transcript: {error}")

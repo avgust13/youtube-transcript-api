@@ -16,14 +16,14 @@ This microservice allows you to fetch the transcript of a YouTube video by provi
 
 2. Install the dependencies:
     ```sh
-    npm install
+    pip install -r requirements.txt
     ```
 
 ## Usage
 
 1. Start the server:
     ```sh
-    npm start
+    python main.py
     ```
 
 2. Make a GET request to `/transcript` with the `video` query parameter (YouTube video ID or URL):
@@ -39,8 +39,8 @@ curl "http://localhost:3000/transcript?video=https://www.youtube.com/watch?v=dQw
 
 ## Dependencies
 
-- express: ^4.18.2
-- youtube-transcript: ^1.0.0
+- Flask
+- youtube-transcript-api
 
 ## License
 
